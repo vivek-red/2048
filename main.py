@@ -79,11 +79,10 @@ def key_pressed(event):
     if GAME_STATE == "CONTINUE":
         key = event.keysym
         if key in commands.keys():
-            
-            # operation
+            # operation after key press
             commands[key](board, key)
             
-            # feasability
+            # checking the current state after key press
             GAME_STATE = g.check_game_state(board)
             
             if GAME_STATE == "CONTINUE":
@@ -97,9 +96,9 @@ def key_pressed(event):
 
             if GAME_STATE == "LOST":
                 game_over_screen()
-         
+                        
+#Main      
 if __name__ == "__main__":
-    #main()
     root = tk.Tk()
     root.bind("<Key>", key_pressed)
     root.title("2048")
