@@ -12,6 +12,8 @@ commands = {
             'Left' : g.move,
             'Right': g.move
         }
+
+#GUI Colour mapping
 CELL_COLORS = {
     0: "#cdc1b4",
     2: "#eee4da",
