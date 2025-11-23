@@ -1,18 +1,16 @@
 """
 game_logic.py
---------------
-Implements movement, merging, spawning, and game state checks.
 """
 
 import random
 import board_manager as b
 
 def spawn_tile(board):
-    """Add a random 2 or 4 in an empty cell."""
+    #spawns a random 2 or 4 in an empty cell
     b.spawn_random_tile(board)
 
 def compress_line(line):
-    """Slide all non-zero tiles to one side."""
+    #Slides all non-zero tiles to one side
     # 0 2 0 4 -> 0 0 2 4 / 2 4 0 0 
     non_zeros = [l for l in line if l != 0]
     return non_zeros + [0]*(len(line) - len(non_zeros))        
