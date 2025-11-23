@@ -2,6 +2,10 @@
 
 A Python‑based implementation of 2048 built using Tkinter for the GUI.
 
+# Dependencies
+
+This project has no dependencies or requirements.
+
 # Game Description
 
 The goal is to slide numbered tiles on a grid to combine them and create
