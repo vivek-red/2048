@@ -1,6 +1,3 @@
-"""
-game_logic.py
-"""
 
 import random
 import board_manager as b
@@ -16,7 +13,7 @@ def compress_line(line):
     return non_zeros + [0]*(len(line) - len(non_zeros))        
 
 def merge_line(line):
-    """Merge equal adjacent tiles and return new row."""
+    #Merge equal adjacent tiles and return new row
     line = compress_line(line)
     for i in range(len(line)-1):
         if line[i] == line[i+1] and line[i] != 0:
@@ -30,7 +27,7 @@ def transpose(board):
     board[:] = [[row[i] for row in board] for i in range(num_cols)]
 
 def move(board, direction):
-    """Move tiles in the specified direction (up/down/left/right)."""
+    #Move tiles in the specified direction (up/down/left/right)
     num_rows = len(board)
     num_cols = len(board[0])
     
@@ -66,10 +63,10 @@ def move(board, direction):
 
 def check_game_state(board):
     """
-    Return:
-        "WON" if 2048 tile exists,
-        "LOST" if no valid moves remain,
-        "CONTINUE" otherwise.
+    returns
+        won if 2048 tile exists,
+        lost if no valid moves remain,
+        continue otherwise.
     """
     num_cols = len(board[0])
     num_rows = len(board)
